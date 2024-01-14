@@ -131,15 +131,14 @@ import { myAwesomeFunction } from "@/utils/awesome";
 
 ## How to use it?
 
-Clone this repository with the following command:
+Clone this repository with `degit`:
 ```sh
-git clone git@github.com:TeaFlex/banana-template.git
+degit teaflex/banana-template my-project
 ```
 
-Then remove the `.git` file and install the dependencies with your favorite package manager:
+Go to your project folder and install the dependencies with your favorite package manager:
 ```sh
-cd my-project 
-rm -rf .git
+cd my-project
 pnpm i
 ```
 
