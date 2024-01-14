@@ -131,7 +131,11 @@ import { myAwesomeFunction } from "@/utils/awesome";
 
 ## How to use it?
 
-Clone this repository with `degit`:
+### By Github template
+Use it as a [Github template](https://github.com/new?template_name=banana-template&template_owner=TeaFlex).
+
+### By Cloning it
+Clone this repository with [degit](https://github.com/Rich-Harris/degit):
 ```sh
 degit teaflex/banana-template my-project
 ```
