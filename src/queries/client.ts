@@ -26,17 +26,23 @@ const queryClient = new QueryClient({
     
     queryCache: new QueryCache({
 
-        onError: (_error, query) => {
-            if (query.meta?.error) {
-                toast.showError(query.meta.error);  
+        onError: (_error, { meta }) => {
+            if (meta?.error) {
+                toast.showError(meta.error);  
             }
         },
+        onSuccess: async (_data, { meta }) => {
+            if(meta?.success) {
+                toast.showSuccess(meta.success);
+            }
+        }
     }),
     
     mutationCache: new MutationCache({
-        onError: (_error, _variables, _context, mutation) => {
-            if(mutation.meta?.error) {
-                toast.showError(mutation.meta.error);      
+
+        onError: (_error, _variables, _context, { meta }) => {
+            if(meta?.error) {
+                toast.showError(meta.error);      
             }
         },
         onSuccess: async (_data, _variables, _context, { meta }) => {
