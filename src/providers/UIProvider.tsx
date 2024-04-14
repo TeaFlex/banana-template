@@ -4,6 +4,7 @@ import { AppToast } from "@/utils/toast";
 import { PrimeReactProvider } from "primereact/api";
 import themes from "@/themes";
 import { ConfirmDialog } from "primereact/confirmdialog";
+import { twMerge } from "tailwind-merge";
 
 
 interface UIContextValue {}
@@ -26,7 +27,17 @@ export const UIProvider = (props: UIProviderProps) => {
 
     return (
         // Set unstyled to `true` if you want to disable the default theme.
-        <PrimeReactProvider value={{ unstyled: false, pt: themes.main }} >
+        <PrimeReactProvider 
+            value={{ 
+                unstyled: true, 
+                pt: themes.main,
+                ptOptions: {
+                    mergeProps: true,
+                    mergeSections: true,
+                    classNameMergeFunction: twMerge,
+                }
+            }}
+        >
             <Toast ref={_toast}/>
             <ConfirmDialog />
             <UIContext.Provider value={initialValue}>

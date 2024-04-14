@@ -1,7 +1,10 @@
+import TailwindTheme from "primereact/passthrough/tailwind";
 import { PrimeReactPTOptions } from "primereact/api";
 
 const mainTheme: PrimeReactPTOptions = {
-    // Put any override style here...
+    // Applying Tailwind theme config by default.
+    ...TailwindTheme,
+    // Put any override style below...
 };
 
 export default mainTheme;
