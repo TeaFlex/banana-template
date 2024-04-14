@@ -5,9 +5,6 @@ import "./styles.css";
 
 import "primereact/resources/primereact.min.css";
 
-// Default applied theme (can be changed/removed)
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-
 // PrimeIcons
 import "primeicons/primeicons.css";
 
