@@ -9,7 +9,7 @@ this template uses the following technologies:
 - [Vite.js](https://vitejs.dev) (Development server)
 - [Primereact](https://primereact.org) (React UI suite)
 - [Tailwind CSS](https://tailwindcss.com) (CSS framework)
-- [Typescript](https://typescript.com) (JavaScript with syntax for types)
+- [Typescript](https://www.typescriptlang.org/) (JavaScript with syntax for types)
 
 It also includes some additional utilities and libraries such as:
 - [axios](https://axios-http.com/) (HTTP client)
