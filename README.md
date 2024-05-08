@@ -49,8 +49,6 @@ export default {
     awesome: awesomeTheme, // We add our import here
 };
 
-export default myTheme;
-
 // @/providers/UIProvider.tsx
 export const UIProvider = (props: UIProviderProps) => {
     
