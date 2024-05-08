@@ -31,6 +31,7 @@ export const UIProvider = (props: UIProviderProps) => {
         Tailwind,
         themes.main,
         {
+            // Behaviour for merge between Tailwind theme and custom theme rules.
             mergeProps: true,
             mergeSections: true,
             classNameMergeFunction: twMerge,
@@ -43,6 +44,12 @@ export const UIProvider = (props: UIProviderProps) => {
             value={{ 
                 unstyled: true, 
                 pt: AppTheme,
+                ptOptions: {
+                    // Behaviour for merge between theme and one time rules.
+                    mergeProps: true,
+                    mergeSections: true,
+                    classNameMergeFunction: twMerge,
+                },
             }}
         >
             <Toast ref={_toast}/>
