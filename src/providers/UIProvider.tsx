@@ -5,6 +5,8 @@ import { PrimeReactProvider } from "primereact/api";
 import themes from "@/themes";
 import { ConfirmDialog } from "primereact/confirmdialog";
 import { twMerge } from "tailwind-merge";
+import { usePassThrough } from "primereact/passthrough";
+import Tailwind from "primereact/passthrough/tailwind";
 
 
 interface UIContextValue {}
@@ -25,17 +27,22 @@ export const UIProvider = (props: UIProviderProps) => {
             AppToast.initInstance(_toast.current);
     }, []);
 
+    const AppTheme = usePassThrough(
+        Tailwind,
+        themes.main,
+        {
+            mergeProps: true,
+            mergeSections: true,
+            classNameMergeFunction: twMerge,
+        },
+    );
+
     return (
         // Set unstyled to `true` if you want to disable the default theme.
         <PrimeReactProvider 
             value={{ 
                 unstyled: true, 
-                pt: themes.main,
-                ptOptions: {
-                    mergeProps: true,
-                    mergeSections: true,
-                    classNameMergeFunction: twMerge,
-                }
+                pt: AppTheme,
             }}
         >
             <Toast ref={_toast}/>
