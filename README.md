@@ -21,6 +21,7 @@ It also includes some additional utilities and libraries such as:
 - [formik](https://formik.org) (React form builder)
 - [yup](https://github.com/jquense/yup) (Data validation)
 - [font-awesome icons v6](https://fontawesome.com/) (A lot of cool icons)
+- [vite-plugin-svgr](https://github.com/pd4d10/vite-plugin-svgr) (Vite plugin for [svgr](https://github.com/gregberge/svgr) to transform SVGs into React components)
 
 ## What are the features?
 
@@ -128,6 +129,23 @@ import { myAwesomeFunction } from "../../../../utils/awesome";
 // ...to that!
 import { myAwesomeFunction } from "@/utils/awesome";
 ```
+
+### Dynamic SVGs components
+
+With this template, you no longer need to create manually components for your favorites SVGs icons or images.
+Just import them in your code as such:
+
+```jsx
+import MyAwesomeSVGIcon from "@/path/to/svg/awesomeIcon.svg?react";
+
+const SomeComponent = () => {
+    return <>
+        <MyAwesomeSvgIcon />
+    </>;
+}
+```
+
+For more information about svgr configuration, see [their docs](https://github.com/pd4d10/vite-plugin-svgr?tab=readme-ov-file#readme).
 
 ## How to use it?
 
