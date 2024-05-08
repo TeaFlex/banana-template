@@ -56,9 +56,23 @@ export const UIProvider = (props: UIProviderProps) => {
     
     // ...
 
+    const AppTheme = usePassThrough(
+        Tailwind,
+        themes.awesome, // We use our new theme here
+        {
+            mergeProps: true,
+            mergeSections: true,
+            classNameMergeFunction: twMerge,
+        },
+    );
+
     return (
-        // Set unstyled to `true` if you want to disable the default theme.
-        <PrimeReactProvider value={{ unstyled: true, pt: themes.awesome }} >
+        <PrimeReactProvider 
+            value={{ 
+                unstyled: true, 
+                pt: AppTheme,
+            }}
+        >
             <Toast ref={_toast}/>
             <ConfirmDialog />
             <UIContext.Provider value={initialValue}>
